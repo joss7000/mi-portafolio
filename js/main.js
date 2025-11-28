@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // MODAL PDF VIEWER WITH PDF.JS
     // ========================================
     const modal = document.getElementById('pdfModal');
-    const modalClose = document.querySelector('.modal-close');
+    const modalClose = document.querySelector('#pdfModal .modal-close');
     const modalTitle = document.getElementById('modalTitle');
     const btnViewProjects = document.querySelectorAll('.btn-view-project');
     const pdfCanvas = document.getElementById('pdfCanvas');
@@ -319,27 +319,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close modal
-    modalClose.addEventListener('click', closeModal);
+    // Close modal - MEJORADO
+    if (modalClose) {
+        modalClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeModal();
+        });
+    }
     
     modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
+        // Solo cerrar si se hace clic directamente en el fondo del modal, no en su contenido
+        if (e.target === modal || e.target.classList.contains('modal')) {
             closeModal();
         }
     });
 
     function closeModal() {
-        modal.classList.remove('active');
-        pdfDoc = null;
-        pageNumCurrent = 1;
-        pdfContainer.style.display = 'none';
-        pdfLoading.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        if (modal && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            pdfDoc = null;
+            pageNumCurrent = 1;
+            if (pdfContainer) pdfContainer.style.display = 'none';
+            if (pdfLoading) pdfLoading.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Limpiar el canvas
+            if (pdfCanvas) {
+                const ctx = pdfCanvas.getContext('2d');
+                ctx.clearRect(0, 0, pdfCanvas.width, pdfCanvas.height);
+            }
+            
+            // Limpiar el iframe si está visible
+            if (pdfFallback) {
+                pdfFallback.src = '';
+                pdfFallback.style.display = 'none';
+            }
+        }
     }
 
     // Close modal with ESC key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
             closeModal();
         }
     });
