@@ -26,7 +26,7 @@
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="profile">
-            <div class="profile-image">
+            <div class="profile-image" id="profileImage">
                 <img src="assets/images/profile.jpeg" alt="Joselyn De Gracia">
             </div>
             <h2 class="profile-name">Joselyn De Gracia</h2>
@@ -109,20 +109,20 @@
                             modernas y mejores prácticas de desarrollo.
                         </p>
                         <div class="about-info">
-                            <div class="info-item">
+                            <a href="https://www.utp.ac.pa" target="_blank" rel="noopener noreferrer" class="info-item" style="text-decoration: none; color: inherit;">
                                 <i class="fas fa-graduation-cap"></i>
                                 <div>
                                     <h4>Educación</h4>
                                     <p>Universidad Tecnológica de Panamá</p>
                                 </div>
-                            </div>
-                            <div class="info-item">
+                            </a>
+                            <a href="https://www.google.com/maps/search/Universidad+Tecnológica+de+Panamá+Sede+Chiriquí+David" target="_blank" rel="noopener noreferrer" class="info-item" style="text-decoration: none; color: inherit;">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div>
                                     <h4>Ubicación</h4>
                                     <p>David, Chiriquí, Panamá</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -130,9 +130,9 @@
         </section>
 
         <!-- Sección Habilidades -->
-        <!-- Sección Habilidades -->
-<section id="habilidades" class="section section-alt">
-    <div class="container">
+        <section id="habilidades" class="section section-alt">
+            <canvas id="skillsCanvas"></canvas>
+            <div class="container">
         <h2 class="section-title">Habilidades Tecnológicas</h2>
         <div class="skills-grid">
             <!-- Frontend -->
@@ -387,8 +387,9 @@
 </section>
 
         <!-- Sección Proyectos -->
-<section id="proyectos" class="section">
-    <div class="container">
+        <section id="proyectos" class="section">
+            <canvas id="lightningCanvas"></canvas>
+            <div class="container">
         <h2 class="section-title">Mis Proyectos</h2>
         <div class="projects-grid">
             <!-- Proyecto 1 -->
@@ -612,12 +613,10 @@
         </div>
     </div>
 </section>
-```
-
-
 
         <!-- Sección Contacto -->
         <section id="contacto" class="section section-alt">
+            <canvas id="contactCanvas"></canvas>
             <div class="container">
                 <h2 class="section-title">Contacto</h2>
                 <div class="contact-content">
@@ -635,20 +634,20 @@
                                     <a href="mailto:joselyn.degracia@utp.ac.pa">joselyn.degracia@utp.ac.pa</a>
                                 </div>
                             </div>
-                            <div class="contact-item">
+                            <a href="https://www.google.com/maps/search/Universidad+Tecnológica+de+Panamá+Sede+Chiriquí+David" target="_blank" rel="noopener noreferrer" class="contact-item" style="text-decoration: none; color: inherit;">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div>
                                     <h4>Ubicación</h4>
                                     <p>David, Chiriquí, Panamá</p>
                                 </div>
-                            </div>
-                            <div class="contact-item">
+                            </a>
+                            <a href="https://www.utp.ac.pa" target="_blank" rel="noopener noreferrer" class="contact-item" style="text-decoration: none; color: inherit;">
                                 <i class="fas fa-graduation-cap"></i>
                                 <div>
                                     <h4>Universidad</h4>
                                     <p>Universidad Tecnológica de Panamá</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -663,6 +662,14 @@
             </div>
         </footer>
     </main>
+
+    <!-- Modal para Foto de Perfil -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content profile-modal-content">
+            <span class="modal-close profile-close">&times;</span>
+            <img src="assets/images/profile.jpeg" alt="Joselyn De Gracia" class="profile-modal-image">
+        </div>
+    </div>
 
     <!-- Modal para PDFs -->
     <div id="pdfModal" class="modal">
