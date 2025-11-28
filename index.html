@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joselyn De Gracia | Portafolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        // Verificar que PDF.js se cargue correctamente
+        window.addEventListener('load', function() {
+            if (typeof pdfjsLib === 'undefined') {
+                console.error('PDF.js no se cargó correctamente');
+            } else {
+                console.log('PDF.js cargado correctamente');
+                // Configurar worker si aún no está configurado
+                if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile">
+            <div class="profile-image">
+                <img src="assets/images/profile.jpeg" alt="Joselyn De Gracia">
+            </div>
+            <h2 class="profile-name">Joselyn De Gracia</h2>
+            <p class="profile-title">Estudiante de Desarrollo y Gestión de Software</p>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#inicio" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#sobre-mi" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Sobre Mí</span>
+            </a>
+            <a href="#habilidades" class="nav-item">
+                <i class="fas fa-code"></i>
+                <span>Habilidades</span>
+            </a>
+            <a href="#proyectos" class="nav-item">
+                <i class="fas fa-folder"></i>
+                <span>Proyectos</span>
+            </a>
+            <a href="#contacto" class="nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contacto</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="mailto:joselyn.degracia@utp.ac.pa" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Sección Inicio -->
+        <section id="inicio" class="section hero-section">
+            <canvas id="fireworksCanvas"></canvas>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Hola, soy <span class="highlight">Joselyn De Gracia</span>
+                    </h1>
+                    <p class="hero-subtitle">Estudiante de segundo año en Desarrollo y Gestión de Software</p>
+                    <p class="hero-description">
+                        Apasionada por crear soluciones web innovadoras y funcionales. 
+                        Actualmente cursando mi segundo año en la Universidad Tecnológica de Panamá.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#proyectos" class="btn btn-primary">
+                            <i class="fas fa-folder"></i> Ver Proyectos
+                        </a>
+                        <a href="#contacto" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Contactar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre Mí -->
+        <section id="sobre-mi" class="section">
+            <div class="container">
+                <h2 class="section-title">Sobre Mí</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p id="about-text-1">
+                            Soy estudiante de segundo año en la carrera de Desarrollo y Gestión de Software 
+                            en la Universidad Tecnológica de Panamá. Me apasiona el desarrollo web y la 
+                            creación de sistemas que faciliten la vida de las personas.
+                        </p>
+                        <p id="about-text-2">
+                            Durante mi formación académica, he trabajado en diversos proyectos que abarcan 
+                            desde diseño web hasta sistemas de gestión complejos, utilizando tecnologías 
+                            modernas y mejores prácticas de desarrollo.
+                        </p>
+                        <div class="about-info">
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <h4>Educación</h4>
+                                    <p>Universidad Tecnológica de Panamá</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Ubicación</h4>
+                                    <p>David, Chiriquí, Panamá</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Habilidades -->
+        <!-- Sección Habilidades -->
+<section id="habilidades" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Habilidades Tecnológicas</h2>
+        <div class="skills-grid">
+            <!-- Frontend -->
+            <div class="skill-card" data-skill="html">
+                <div class="skill-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h3 class="skill-name">HTML5</h3>
+                <div class="skill-overlay">
+                    <p>Estructura semántica y desarrollo de contenido web moderno</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="css">
+                <div class="skill-icon">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <h3 class="skill-name">CSS3</h3>
+                <div class="skill-overlay">
+                    <p>Diseño responsive, animaciones y layouts modernos</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="js">
+                <div class="skill-icon">
+                    <i class="fab fa-js"></i>
+                </div>
+                <h3 class="skill-name">JavaScript</h3>
+                <div class="skill-overlay">
+                    <p>Interactividad, DOM manipulation y lógica del cliente</p>
+                </div>
+            </div>
+
+            <!-- Backend -->
+            <div class="skill-card" data-skill="php">
+                <div class="skill-icon">
+                    <i class="fab fa-php"></i>
+                </div>
+                <h3 class="skill-name">PHP</h3>
+                <div class="skill-overlay">
+                    <p>Desarrollo backend y sistemas de gestión empresarial</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="aspnet">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="skill-name">ASP.NET</h3>
+                <div class="skill-overlay">
+                    <p>Aplicaciones web con .NET Framework</p>
+                </div>
+            </div>
+
+            <!-- Bases de Datos -->
+            <div class="skill-card" data-skill="mysql">
+                <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3 class="skill-name">MySQL</h3>
+                <div class="skill-overlay">
+                    <p>Gestión de bases de datos relacionales y CRUD</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="supabase">
+                <div class="skill-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3 class="skill-name">Supabase</h3>
+                <div class="skill-overlay">
+                    <p>Backend as a Service y base de datos en la nube</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="phpmyadmin">
+                <div class="skill-icon">
+                    <i class="fas fa-table"></i>
+                </div>
+                <h3 class="skill-name">phpMyAdmin</h3>
+                <div class="skill-overlay">
+                    <p>Administración de bases de datos MySQL via web</p>
+                </div>
+            </div>
+
+            <!-- Servidores y Entornos -->
+            <div class="skill-card" data-skill="xampp">
+                <div class="skill-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3 class="skill-name">XAMPP</h3>
+                <div class="skill-overlay">
+                    <p>Servidor local Apache, MySQL, PHP y Perl</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="nginx">
+                <div class="skill-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3 class="skill-name">Nginx</h3>
+                <div class="skill-overlay">
+                    <p>Servidor web de alto rendimiento y proxy inverso</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="apache">
+                <div class="skill-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3 class="skill-name">Apache Server</h3>
+                <div class="skill-overlay">
+                    <p>Servidor HTTP para aplicaciones web</p>
+                </div>
+            </div>
+
+            <!-- Virtualización y Redes -->
+            <div class="skill-card" data-skill="virtualbox">
+                <div class="skill-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <h3 class="skill-name">VirtualBox</h3>
+                <div class="skill-overlay">
+                    <p>Virtualización de sistemas operativos y entornos de prueba</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="kali">
+                <div class="skill-icon">
+                    <i class="fab fa-linux"></i>
+                </div>
+                <h3 class="skill-name">Kali Linux</h3>
+                <div class="skill-overlay">
+                    <p>Penetration testing y auditoría de seguridad</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="networking">
+                <div class="skill-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3 class="skill-name">Redes LAN/VPN</h3>
+                <div class="skill-overlay">
+                    <p>Configuración de redes locales y virtuales privadas</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="vlan">
+                <div class="skill-icon">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <h3 class="skill-name">VLAN</h3>
+                <div class="skill-overlay">
+                    <p>Segmentación de redes y configuración de switches</p>
+                </div>
+            </div>
+
+            <!-- Seguridad -->
+            <div class="skill-card" data-skill="nmap">
+                <div class="skill-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="skill-name">NMAP</h3>
+                <div class="skill-overlay">
+                    <p>Escaneo de puertos y análisis de red</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="wireshark">
+                <div class="skill-icon">
+                    <i class="fas fa-filter"></i>
+                </div>
+                <h3 class="skill-name">Wireshark</h3>
+                <div class="skill-overlay">
+                    <p>Análisis de tráfico de red y captura de paquetes</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="firewall">
+                <div class="skill-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="skill-name">Firewall Config</h3>
+                <div class="skill-overlay">
+                    <p>Configuración de firewalls y mitigación de ataques DDoS</p>
+                </div>
+            </div>
+
+            <!-- Diseño y Metodologías -->
+            <div class="skill-card" data-skill="uxui">
+                <div class="skill-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="skill-name">UX/UI Design</h3>
+                <div class="skill-overlay">
+                    <p>Diseño de interfaces, wireframes y prototipos</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="crud">
+                <div class="skill-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3 class="skill-name">CRUD Operations</h3>
+                <div class="skill-overlay">
+                    <p>Create, Read, Update, Delete en sistemas de gestión</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="pos">
+                <div class="skill-icon">
+                    <i class="fas fa-cash-register"></i>
+                </div>
+                <h3 class="skill-name">Sistemas POS</h3>
+                <div class="skill-overlay">
+                    <p>Punto de venta, facturación e inventario</p>
+                </div>
+            </div>
+
+            <!-- Herramientas y Extras -->
+            <div class="skill-card" data-skill="git">
+                <div class="skill-icon">
+                    <i class="fab fa-git-alt"></i>
+                </div>
+                <h3 class="skill-name">Git</h3>
+                <div class="skill-overlay">
+                    <p>Control de versiones y colaboración en código</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="chatbot">
+                <div class="skill-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="skill-name">ChatBot</h3>
+                <div class="skill-overlay">
+                    <p>Desarrollo de asistentes virtuales integrados</p>
+                </div>
+            </div>
+
+            <div class="skill-card" data-skill="kanban">
+                <div class="skill-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3 class="skill-name">Metodología Kanban</h3>
+                <div class="skill-overlay">
+                    <p>Gestión ágil de proyectos y flujo de trabajo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Sección Proyectos -->
+<section id="proyectos" class="section">
+    <div class="container">
+        <h2 class="section-title">Mis Proyectos</h2>
+        <div class="projects-grid">
+            <!-- Proyecto 1 -->
+            <div class="project-card">
+                <div class="project-number">01</div>
+                <div class="project-content">
+                    <h3 class="project-title">Investigación: Estructura y Jerarquía Visual en el Diseño</h3>
+                    <p class="project-description">
+                        Investigación académica sobre principios fundamentales de diseño web, incluyendo 
+                        agrupación de elementos, jerarquía visual, espaciado en blanco, presentación del texto, 
+                        técnicas de categorización en tarjetas (Card Sorting), prototipado y wireframes.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Diseño UX/UI</span>
+                        <span class="tag">Wireframes</span>
+                        <span class="tag">Card Sorting</span>
+                        <span class="tag">Prototipado</span>
+                        <span class="tag">Investigación</span>
+                    </div>
+                    <button class="btn-view-project" data-pdf="proyecto1-estructura-jerarquia.pdf">
+                        <i class="fas fa-file-pdf"></i> Ver Investigación
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="project-card">
+                <div class="project-number">02</div>
+                <div class="project-content">
+                    <h3 class="project-title">Sitio Web UNACHI - Universidad de Chiriquí</h3>
+                    <p class="project-description">
+                        Desarrollo de página web informativa para la Universidad Autónoma de Chiriquí (UNACHI) 
+                        con diseño desde cero en PHP. Incluye menú principal de navegación, información sobre 
+                        misión, visión, servicios, programas académicos y planes de estudio.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">Diseño Web</span>
+                    </div>
+                    <button class="btn-view-project" data-pdf="proyecto2-unachi.pdf">
+                        <i class="fas fa-file-pdf"></i> Ver Proyecto
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="project-card">
+                <div class="project-number">03</div>
+                <div class="project-content">
+                    <h3 class="project-title">Portal Web Municipio de Alanje</h3>
+                    <p class="project-description">
+                        Sitio web oficial para el Municipio de Alanje desarrollado con HTML/CSS/ASP.NET. 
+                        Presenta información institucional completa incluyendo inicio, visión y misión, 
+                        servicios prestados, historia, departamentos municipales, contáctenos y ubicación geográfica.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">ASP.NET</span>
+                        <span class="tag">Servidor Apache</span>
+                    </div>
+                    <button class="btn-view-project" data-pdf="proyecto3-municipio-alanje.pdf">
+                        <i class="fas fa-file-pdf"></i> Ver Proyecto
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 4 -->
+            <div class="project-card">
+                <div class="project-number">04</div>
+                <div class="project-content">
+                    <h3 class="project-title">Junta Comunal Las Lomas + Taller Kali Linux</h3>
+                    <p class="project-description">
+                        Portal web para la Junta Comunal de Las Lomas con secciones de transparencia y servicios 
+                        ciudadanos. Incluye taller práctico de ciberseguridad usando Kali Linux en VirtualBox 
+                        para realizar pruebas de penetración (ataques DDoS, escaneo NMAP, análisis con Wireshark) 
+                        en red LAN simulada entre servidores de compañeros.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML/ASP.NET</span>
+                        <span class="tag">Kali Linux</span>
+                        <span class="tag">VirtualBox</span>
+                        <span class="tag">NMAP</span>
+                        <span class="tag">Wireshark</span>
+                        <span class="tag">DDoS</span>
+                        <span class="tag">Ciberseguridad</span>
+                    </div>
+                    <button class="btn-view-project" data-pdf="proyecto4-junta-comunal-kali.pdf">
+                        <i class="fas fa-file-pdf"></i> Ver Proyecto
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 5 -->
+            <div class="project-card">
+                <div class="project-number">05</div>
+                <div class="project-content">
+                    <h3 class="project-title">Parcial 1: Centro de Lenguas UTP</h3>
+                    <p class="project-description">
+                        Sitio web completo para el Centro Especializado en Lenguas (CEL) de la Universidad 
+                        Tecnológica de Panamá. Diseño desde cero con HTML/CSS/ASP, incluyendo menú de navegación 
+                        interna, cursos ofrecidos, ubicación, horarios, servicios, misión y visión. Réplica 
+                        funcional del sitio oficial institucional.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">ASP</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <button class="btn-view-project" data-pdf="proyecto5-centro-lenguas-utp.pdf">
+                        <i class="fas fa-file-pdf"></i> Ver Proyecto
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 6 -->
+            <div class="project-card">
+                <div class="project-number">06</div>
+                <div class="project-content">
+                    <h3 class="project-title">Succesos y Más - Organización de Eventos</h3>
+                    <p class="project-description">
+                        Plataforma web profesional para empresa organizadora de eventos. Incluye página de inicio 
+                        con noticias y presentación corporativa, catálogo de productos con precios, sección de 
+                        servicios para diferentes tipos de eventos, galería de clientes y formulario de contacto.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Diseño Responsivo</span>
+                    </div>
+                    <button class="btn-view-project" data-pdf="proyecto6-succesos-mas.pdf">
+                        <i class="fas fa-file-pdf"></i> Ver Proyecto
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 7 -->
+            <div class="project-card">
+                <div class="project-number">07</div>
+                <div class="project-content">
+                    <h3 class="project-title">Investigación: XAMPP y MySQL con Prototipo RHODE</h3>
+                    <p class="project-description">
+                        Investigación técnica sobre Base de Datos (MySQL) con PHP, incluyendo conceptos, 
+                        requerimientos, configuración, archivos/entornos, puertos y replicación en otros SGBD. 
+                        Desarrollo práctico de un prototipo web de gestión con XAMPP, integración con phpMyAdmin 
+                        y demostración en vivo con capturas de implementación.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">XAMPP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">phpMyAdmin</span>
+                        <span class="tag">SGBD</span>
+                        <span class="tag">Investigación</span>
+                    </div>
+                    <button class="btn-view-project" data-pdf="proyecto7-xampp-mysql.pdf">
+                        <i class="fas fa-file-pdf"></i> Ver Investigación
+                    </button>
+                </div>
+            </div>
+
+            <!-- Proyecto 8 -->
+            <div class="project-card">
+                <div class="project-number">08</div>
+                <div class="project-content">
+                    <h3 class="project-title">Chinos Café - Sistema POS y Gestión</h3>
+                    <p class="project-description">
+                        Sistema web completo de punto de venta (POS) para cafetería desarrollado en PHP con 
+                        base de datos MySQL. Funcionalidades: gestión CRUD de productos, control de inventario 
+                        y stock, procesamiento de ventas, generación de facturas, sistema de proveedores y 
+                        administración de inventario con servidor MySQL y archivos.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">CRUD</span>
+                        <span class="tag">POS</span>
+                        <span class="tag">Facturación</span>
+                    </div>
+                    <button class="btn-view-project" data-pdf="proyecto8-chinos-cafe.pdf">
+                        <i class="fas fa-file-pdf"></i> Ver Proyecto
+                    </button>
+                </div>
+            </div>
+              
+
+            <!-- Proyecto 10 - DESTACADO -->
+            <div class="project-card featured">
+                <div class="project-number">09</div>
+                <div class="project-content">
+                    <h3 class="project-title">NIBARRA - Sistema de Mantenimiento (Parcial 2)</h3>
+                    <p class="project-description">
+                        Sistema web empresarial completo para gestión de mantenimientos de PYME. Incluye: 
+                        Header/Footer con estructura profesional, CRUD de equipos con base de datos local 
+                        replicada a servidor externo (Supabase), calendario mensual con agenda de mantenimientos, 
+                        tablero Kanban (Por Hacer, En Espera, En Revisión, Terminada) con tipos de mantenimiento 
+                        (predictivo, preventivo, correctivo) y barra de progreso visual. Sistema de acceso 
+                        controlado, ChatBot integrado, protección de código y simulación de red LAN/VPN con 
+                        2 routers conectando Chiriquí-David con servidor remoto.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Supabase</span>
+                        <span class="tag">CRUD</span>
+                        <span class="tag">Kanban</span>
+                        <span class="tag">ChatBot</span>
+                        <span class="tag">Calendario</span>
+                        <span class="tag">Red VPN</span>
+                        <span class="tag">Autenticación</span>
+                    </div>
+                    <button class="btn-view-project" data-pdf="proyecto10-nibarra.pdf">
+                        <i class="fas fa-file-pdf"></i> Ver Proyecto
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+```
+
+
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>¡Hablemos!</h3>
+                        <p>
+                            Si tienes alguna pregunta, proyecto o simplemente quieres saludar, 
+                            no dudes en contactarme.
+                        </p>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:joselyn.degracia@utp.ac.pa">joselyn.degracia@utp.ac.pa</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Ubicación</h4>
+                                    <p>David, Chiriquí, Panamá</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <h4>Universidad</h4>
+                                    <p>Universidad Tecnológica de Panamá</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Joselyn De Gracia González. Todos los derechos reservados.</p>
+                <p class="footer-subtitle">Portafolio de proyectos - Desarrollo y Gestión de Software</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Modal para PDFs -->
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <h3 id="modalTitle">Proyecto</h3>
+            </div>
+            <div class="modal-body">
+                <div class="pdf-controls">
+                    <button class="pdf-btn" id="prevPage" title="Página anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span class="page-info">
+                        <span id="pageNum">1</span> / <span id="pageCount">1</span>
+                    </span>
+                    <button class="pdf-btn" id="nextPage" title="Página siguiente">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="pdf-btn" id="zoomOut" title="Alejar">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <span class="zoom-info" id="zoomLevel">100%</span>
+                    <button class="pdf-btn" id="zoomIn" title="Acercar">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button class="pdf-btn" id="downloadPdf" title="Descargar PDF">
+                        <i class="fas fa-download"></i>
+                    </button>
+                </div>
+                <div class="pdf-container">
+                    <canvas id="pdfCanvas"></canvas>
+                    <iframe id="pdfFallback" style="display: none; width: 100%; height: 100%; border: none;"></iframe>
+                </div>
+                <div class="pdf-loading" id="pdfLoading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Cargando PDF...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
